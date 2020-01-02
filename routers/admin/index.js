@@ -49,7 +49,8 @@ module.exports = app => {
         dest: path.join(__dirname,'../../uploads')
     });
     app.post('/admin/api/uploads',middleAuth(),upload.single('file'),(req,res,next)=>{
-        const url = 'http://localhost:3333/uploads/'+ req.file.filename;
+        // const url = 'http://localhost:3333/uploads/'+ req.file.filename;
+        const url = 'http://47.105.77.224:3333/uploads/'+ req.file.filename;
         req.file.url = url;
         res.send(req.file);
     })
